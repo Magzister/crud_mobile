@@ -1,0 +1,56 @@
+<LoginScreen>:
+    id: login_screen
+    name: "login_screen"
+
+    BoxLayout:
+        id: login_layout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 20
+
+        Label:
+            text: 'Log In'
+            font_size: 32
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Username'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: username
+                multiline:False
+                font_size: 24
+                text: "magzister"
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Password'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: password
+                multiline:False
+                password:True
+                font_size: 24
+                text: "12345678abc"
+        Button:
+            text: 'LOG IN'
+            font_size: 24
+
+            on_press: root.login(username.text, password.text)
+
+        Button:
+            text: 'CLEAR'
+            font_size: 24
+
+            on_press: root.clear()
+

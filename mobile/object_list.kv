@@ -1,0 +1,52 @@
+<ObjectListScreen>
+    id: object_list_screen
+    name: "object_list_screen"
+
+    BoxLayout:
+        id: object_list_layout
+        orientation: 'vertical'
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: 40
+
+            Label:
+                id: username
+                text: "username"
+                font_size: 18
+
+            Button:
+                text: "LOG OUT"
+                font_size: 24
+
+                on_press: root.logout()
+
+        BoxLayout:
+            orientation: "vertical"
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: None
+                height: 40
+
+                Label:
+                    text: "Owner"
+
+                Label:
+                    text: "Object name"
+
+            ScrollView:
+
+                BoxLayout:
+                    id: objects
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: self.minimum_height
+
+                    canvas:
+                        Color:
+                            rgb: (.3, .3, .3)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size

@@ -1,0 +1,30 @@
+#:import QRCodeWidget kivy_garden.qrcode
+
+<QRCodeScreen>
+    id: qr_code_screen
+    name: "qr_code_screen"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: 40
+
+            Label:
+                id: object_name
+                text: "object_name"
+                font_size: 18
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Button:
+                size_hint_y: None
+                height: 40
+                text: 'BACK'
+                on_release: root.back()
+
+            QRCodeWidget:
+                id: qr
